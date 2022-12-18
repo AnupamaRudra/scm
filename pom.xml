@@ -12,6 +12,16 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>3.0.0</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
     <build>
         <plugins>
             <plugin>
@@ -25,7 +35,7 @@
                             <target>
                                 <exec executable="git" output="${basedir}/target/changes.txt">
                                     <arg value="diff"/>
-                                    <arg value="master"/>
+                                    <arg value="origin/master"/>
                                     <arg value="src/main/resources/json-schema.json"/>
                                 </exec>
                             </target>
