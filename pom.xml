@@ -23,7 +23,11 @@
                         <phase> compile</phase>
                         <configuration>
                             <target>
-                                <exec>command="git diff"</exec>
+                                <exec executable="git" output="${basedir}/target/changes.txt">
+                                    <arg value="diff"/>
+                                    <arg value="master"/>
+                                    <arg value="src/main/resources/json-schema.json"/>
+                                </exec>
                             </target>
                         </configuration>
                         <goals>
